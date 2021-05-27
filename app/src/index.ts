@@ -1,6 +1,5 @@
 import express from 'express';
 const faceapi = require("face-api.js")  
-const canvas = require("canvas")  
 const fs = require("fs")  
 const path = require("path")
 const fetch = require('node-fetch');
@@ -8,8 +7,6 @@ const fetch = require('node-fetch');
 const app = express();
 const port = process.env.PORT || 3030; // default port to listen
 
-const { Canvas, Image, ImageData } = canvas  
-faceapi.env.monkeyPatch({ Canvas, Image, ImageData })
 faceapi.env.monkeyPatch({ fetch: fetch });
 
 
