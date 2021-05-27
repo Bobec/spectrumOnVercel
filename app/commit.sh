@@ -1,3 +1,4 @@
+npm run build
 git status
 git add --all
 read -p "Commit description: " desc  
