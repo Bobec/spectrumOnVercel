@@ -30,6 +30,7 @@ app.post('/api/faceApi', (req, res) => {
 app.get('/api/faceApi', async(req, res) => {
   
   const MODELS_URL = path.join(__dirname, './models');
+  
   await faceapi.nets.faceLandmark68Net.loadFromDisk(MODELS_URL)
   await faceapi.nets.faceRecognitionNet.loadFromDisk(MODELS_URL)
   await faceapi.nets.faceExpressionNet.loadFromDisk(MODELS_URL)
