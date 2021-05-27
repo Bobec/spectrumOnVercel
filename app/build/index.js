@@ -17,14 +17,14 @@ app.get('/api/item/:itemId', (req, res) => {
     const { itemId } = req.params;
     res.json({ itemId });
 });
-app.post('/api/faceApi', (req, res) => {
-    res.json({ "mess": "got it" });
-});
-app.get('/api/faceApi', (req, res) => {
-    let img = '<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">';
-    console.log("entered");
-    res.send('<h1>SUP</h1>');
-});
+// app.post('/api/faceApi', (req, res) => {
+//     res.json({ "mess": "got it" });
+// });
+// app.get('/api/faceApi', (req, res) => {
+//     let img = '<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">';
+//     console.log("entered");
+//     res.send('<h1>SUP</h1>');
+// });
 // start the express server
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
