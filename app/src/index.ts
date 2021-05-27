@@ -20,11 +20,11 @@ app.get('/api/item/:itemId', (req, res) => {
 //   res.json({"mess": "got it"})
 // });
 
-// app.get('/faceApi', (req, res) => {
-//   let img = '<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">'
-//   console.log("entered")
-//   res.send('<h1>SUP</h1>')
-// });
+app.get('/faceApi', (req, res) => {
+  let img = '<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">'
+  console.log("entered")
+  res.send('<h1>SUP</h1>')
+});
 
 // start the express server
 app.listen(port, () => {
