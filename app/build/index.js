@@ -18,7 +18,6 @@ app.get('/api/item/:itemId', (req, res) => {
     res.json({ itemId });
 });
 app.post('/faceApi', (req, res) => {
-    console.log(req.body.uri);
     res.json({ "mess": "got it" });
 });
 app.get('/faceApi', (req, res) => {

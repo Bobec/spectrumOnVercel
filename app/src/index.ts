@@ -16,9 +16,9 @@ app.get('/api/item/:itemId', (req, res) => {
   res.json({ itemId });
 });
 
-// app.post('/faceApi', (req, res) => {
-//   res.json({"mess": "got it"})
-// });
+app.post('/faceApi', (req, res) => {
+  res.json({"mess": "got it"})
+});
 
 app.get('/faceApi', (req, res) => {
   let img = '<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">'
