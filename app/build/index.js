@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -25,11 +34,16 @@ app.get('/api/item/:itemId', (req, res) => {
 app.post('/api/faceApi', (req, res) => {
     res.json({ "mess": "got it" });
 });
-app.get('/api/faceApi', (req, res) => {
-    let img = '<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">';
+app.get('/api/faceApi', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const MODELS_URL = path.join(__dirname, './models');
+    yield faceapi.nets.faceLandmark68Net.loadFromDisk(MODELS_URL);
+    yield faceapi.nets.faceRecognitionNet.loadFromDisk(MODELS_URL);
+    yield faceapi.nets.faceExpressionNet.loadFromDisk(MODELS_URL);
+    yield faceapi.nets.ssdMobilenetv1.loadFromDisk(MODELS_URL);
+    let img = '<img id="myImg" src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">';
     console.log("entered");
     res.send('<h1>SUP</h1>');
-});
+}));
 // start the express server
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
