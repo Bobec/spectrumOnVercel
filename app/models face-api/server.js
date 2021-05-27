@@ -5,8 +5,6 @@ const path = require("path")
 const fetch = require('node-fetch');
 
 // mokey pathing the faceapi canvas
-const { Canvas, Image, ImageData } = canvas  
-faceapi.env.monkeyPatch({ Canvas, Image, ImageData })
 faceapi.env.monkeyPatch({ fetch: fetch });
 
 const faceDetectionNet = faceapi.nets.ssdMobilenetv1
